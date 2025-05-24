@@ -9,3 +9,4 @@ class SentenceResponse(BaseModel):
     ll1_valid: bool
     dependency_valid: bool
     language_tool_issues: List[str]
+    is_grammatically_correct: bool    # ← new required field
