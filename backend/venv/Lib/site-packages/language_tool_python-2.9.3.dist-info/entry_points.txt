@@ -1,0 +1,2 @@
+[console_scripts]
+language_tool_python = language_tool_python.__main__:main

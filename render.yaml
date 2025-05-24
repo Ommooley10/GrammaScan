@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: GrammaScan-backend
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: PORT
+        value: 10000
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - backend/**
+    repo: Ommooley10/GrammaScan
+    rootDir: backend
+
+  - type: web
+    name: GrammaScan-frontend
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm start"
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - frontend/**
+    repo: Ommooley10/GrammaScan
+    rootDir: frontend
