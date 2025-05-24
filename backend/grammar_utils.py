@@ -6,7 +6,7 @@ import language_tool_python
 
 # Load NLP tools
 nlp = spacy.load("en_core_web_sm")
-tool = language_tool_python.LanguageTool('en-US')
+tool = language_tool_python.LanguageToolPublicAPI('en-US')
 
 # --- CFG GRAMMAR RULES ---
 grammar_rules = {
