@@ -8,9 +8,14 @@ export default function HomePage() {
   const [result, setResult] = useState(null);
 
   const handleCheck = async () => {
+  try {
     const res = await checkGrammar(input);
+    console.log("API Response:", res); // 👈 Add this
     setResult(res);
-  };
+  } catch (error) {
+    console.error("Error checking grammar:", error);
+  }
+};
 
   return (
     <div className="p-4 max-w-xl mx-auto">
