@@ -3,3 +3,4 @@ uvicorn
 spacy
 language-tool-python
 python-multipart
+pydantic

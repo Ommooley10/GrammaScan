@@ -1,11 +1,13 @@
 services:
   - type: web
-    name: GrammaScan-backend
+    name: gramma-backend
     env: python
     plan: free
     region: oregon
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    buildCommand: |
+      pip install -r requirements.txt
+      python -m spacy download en_core_web_sm
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
     envVars:
       - key: PORT
         value: 10000
@@ -17,12 +19,13 @@ services:
     rootDir: backend
 
   - type: web
-    name: GrammaScan-frontend
+    name: gramma-frontend
     env: node
     plan: free
     region: oregon
-    buildCommand: "npm install && npm run build"
-    startCommand: "npm start"
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    staticPublishPath: out
     autoDeploy: true
     buildFilter:
       paths:
