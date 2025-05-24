@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+spacy
+language-tool-python
+python-multipart
