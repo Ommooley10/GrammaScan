@@ -15,7 +15,7 @@ services:
     buildFilter:
       paths:
         - backend/**
-    repo: Ommooley10/GrammaScan
+    repo: https://github.com/Ommooley10/GrammaScan
     rootDir: backend
 
   - type: web
@@ -30,5 +30,5 @@ services:
     buildFilter:
       paths:
         - frontend/**
-    repo: Ommooley10/GrammaScan
+    repo: https://github.com/Ommooley10/GrammaScan
     rootDir: frontend
