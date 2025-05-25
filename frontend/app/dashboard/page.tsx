@@ -1,10 +1,9 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useCallback } from 'react';
 import { 
   BookOpen, 
   CheckCircle, 
   TrendingUp, 
-  Calendar,
   PenTool,
   Target,
   BarChart3,
@@ -17,7 +16,6 @@ import {
   User,
   Home,
   History,
-  HelpCircle,
   Brain,
   BookMarked,
   Send,
@@ -58,28 +56,28 @@ const GrammaScanDashboard = () => {
     }
   }, []);
 
-  const updateStats = (history: GrammarResult[]) => {
-    const totalChecks = history.length;
-    const correctChecks = history.filter(r => r.is_grammatically_correct).length;
-    const grammarScore = totalChecks > 0 ? Math.round((correctChecks / totalChecks) * 100) : 100;
-    
-    // Calculate improvement (compare last 10 vs first 10)
-    let improvement = 0;
-    if (totalChecks >= 20) {
-      const firstTen = history.slice(0, 10);
-      const lastTen = history.slice(-10);
-      const firstScore = (firstTen.filter(r => r.is_grammatically_correct).length / 10) * 100;
-      const lastScore = (lastTen.filter(r => r.is_grammatically_correct).length / 10) * 100;
-      improvement = Math.round(lastScore - firstScore);
-    }
+const updateStats = useCallback((history: GrammarResult[]) => {
+  const totalChecks = history.length;
+  const correctChecks = history.filter(r => r.is_grammatically_correct).length;
+  const grammarScore = totalChecks > 0 ? Math.round((correctChecks / totalChecks) * 100) : 100;
 
-    setStats({
-      totalChecks,
-      grammarScore,
-      improvement,
-      streak: calculateStreak(history)
-    });
-  };
+  let improvement = 0;
+  if (totalChecks >= 20) {
+    const firstTen = history.slice(0, 10);
+    const lastTen = history.slice(-10);
+    const firstScore = (firstTen.filter(r => r.is_grammatically_correct).length / 10) * 100;
+    const lastScore = (lastTen.filter(r => r.is_grammatically_correct).length / 10) * 100;
+    improvement = Math.round(lastScore - firstScore);
+  }
+
+  setStats({
+    totalChecks,
+    grammarScore,
+    improvement,
+    streak: calculateStreak(history)
+  });
+}, [setStats]);
+
 
   const calculateStreak = (history: GrammarResult[]): number => {
     let streak = 0;
