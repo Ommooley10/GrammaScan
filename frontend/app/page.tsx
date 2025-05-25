@@ -1,4 +1,12 @@
-"use client";
+import { redirect } from "next/navigation";
+
+export default function Home() {
+  redirect("/dashboard");
+}
+
+
+
+/*"use client";
 import React, { useState } from 'react';
 import ResultBox from '../components/ResultBox';
 import { checkGrammar } from '../lib/api';
@@ -24,4 +32,4 @@ export default function HomePage() {
       {result && <ResultBox result={result} />}
     </div>
   );
-}
+}*/

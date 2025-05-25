@@ -1,4 +1,4 @@
-interface Result {
+/*interface Result {
   ll1_valid: boolean;
   dependency_valid: boolean;  // match backend response key
   language_tool_issues: string[];
@@ -29,4 +29,4 @@ export default function ResultBox({ result }: ResultBoxProps) {
       )}
     </div>
   );
-}
+}*/
