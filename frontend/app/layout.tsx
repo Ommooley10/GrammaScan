@@ -1,5 +1,4 @@
-// frontend/app/layout.tsx
-import "./globals.css"; // make sure you have this file with your Tailwind imports
+import "./globals.css"; 
 
 export const metadata = {
   title: "GrammaScan",
