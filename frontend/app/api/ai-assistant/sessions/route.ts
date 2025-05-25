@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
+import type { ChatSession } from "@/lib/types"
 
-// In a real app, you'd use a database. For now, we'll use in-memory storage
-const sessions: any[] = []
+const sessions: ChatSession[] = []
 
 export async function GET() {
   return NextResponse.json(sessions)
@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
   try {
     const { title } = await request.json()
 
-    const newSession = {
+    const newSession: ChatSession = {
       id: Date.now().toString(),
       title: title || "New Chat",
       messages: [],
@@ -22,7 +22,8 @@ export async function POST(request: NextRequest) {
     sessions.unshift(newSession)
 
     return NextResponse.json({ sessionId: newSession.id })
-  } catch (error) {
+  } catch {
+    // removed unused error param
     return NextResponse.json({ error: "Failed to create session" }, { status: 500 })
   }
 }

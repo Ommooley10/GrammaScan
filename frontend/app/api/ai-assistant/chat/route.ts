@@ -4,7 +4,7 @@ import { google } from "@ai-sdk/google"
 
 export async function POST(request: NextRequest) {
   try {
-    const { message, sessionId, context } = await request.json()
+    const { message } = await request.json()
 
     // Grammar-focused system prompt optimized for Gemini
     const systemPrompt = `You are a helpful AI assistant specializing in grammar, writing, and language. 

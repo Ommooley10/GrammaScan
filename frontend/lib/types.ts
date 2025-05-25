@@ -1,3 +1,5 @@
+import React from "react"
+
 export interface GrammarResult {
   sentence: string
   ll1_valid: boolean
@@ -16,7 +18,7 @@ export interface Stats {
 export interface SidebarItem {
   id: string
   label: string
-  icon: any
+  icon: React.ReactNode // replaced 'any' with React.ReactNode
 }
 
 export interface GrammarTip {
