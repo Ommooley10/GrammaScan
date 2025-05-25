@@ -291,7 +291,7 @@ const updateStats = useCallback((history: GrammarResult[]) => {
                     {grammarHistory.slice().reverse().map((result, index) => (
                       <div key={index} className="p-4 bg-gray-50 rounded-lg">
                         <div className="flex items-start justify-between mb-2">
-                          <p className="font-medium text-gray-900 flex-1 mr-4">"{result.sentence}"</p>
+                          <p className="font-medium text-gray-900 flex-1 mr-4">&quot;{result.sentence}&quot;</p>
                           {result.is_grammatically_correct ? (
                             <span className="flex items-center text-green-600 text-sm">
                               <CheckCircle className="w-4 h-4 mr-1" />
@@ -423,7 +423,7 @@ const updateStats = useCallback((history: GrammarResult[]) => {
                             )}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <p className="text-gray-900 text-sm font-medium mb-1">"{activity.sentence}"</p>
+                            <p className="text-gray-900 text-sm font-medium mb-1">&quot;{activity.sentence}&quot;</p>
                             {activity.language_tool_issues.length > 0 && (
                               <div className="mb-2">
                                 {activity.language_tool_issues.slice(0, 2).map((error, errorIndex) => (
