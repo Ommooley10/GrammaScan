@@ -53,7 +53,7 @@ def parse_symbol(symbol, tokens, index, memo):
         new_index = index
         success = True
         for sym in production:
-            res = parse_symbol(sym, new_index, memo)
+            res = parse_symbol(sym, tokens, new_index, memo)  # <-- FIXED: added tokens argument
             if res is None:
                 success = False
                 break
