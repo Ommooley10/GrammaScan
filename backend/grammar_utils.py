@@ -3,6 +3,7 @@ sys.setrecursionlimit(10000)
 
 import spacy
 import language_tool_python
+from language_tool_python.utils import RateLimitError
 
 # Load NLP tools
 nlp = spacy.load("en_core_web_sm")
@@ -52,7 +53,7 @@ def parse_symbol(symbol, tokens, index, memo):
         new_index = index
         success = True
         for sym in production:
-            res = parse_symbol(sym, tokens, new_index, memo)
+            res = parse_symbol(sym, new_index, memo)
             if res is None:
                 success = False
                 break
@@ -84,4 +85,7 @@ def dependency_check(sentence):
     return has_subject and has_verb and not missing_prepositions
 
 def language_tool_check(sentence):
-    return tool.check(sentence)
+    try:
+        return tool.check(sentence)
+    except RateLimitError:
+        raise RateLimitError("Rate limit exceeded. Please wait and try again.")
