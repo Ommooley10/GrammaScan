@@ -1,4 +1,5 @@
 import React from "react"
+import type { LucideIcon } from "lucide-react"
 
 export interface GrammarResult {
   sentence: string
@@ -18,8 +19,9 @@ export interface Stats {
 export interface SidebarItem {
   id: string
   label: string
-  icon: React.ReactNode // replaced 'any' with React.ReactNode
+  icon: LucideIcon
 }
+
 
 export interface GrammarTip {
   title: string
