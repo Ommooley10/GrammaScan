@@ -91,7 +91,7 @@ grammascan/
 
 ---
 
-Maintained by Ommooley10
+Maintained by Ommooley10,
 For issues, suggestions, or contributions, please open an issue or pull request.
 
 
