@@ -74,15 +74,19 @@ uvicorn main:app --reload
 ```bash
 grammascan/
 ├── backend/
-│   ├── main.py               # FastAPI app
-│   ├── grammar_check.py      # spaCy + LanguageTool integration
-│   └── requirements.txt
+│ ├── grammar_utils.py    # spaCy + LanguageTool logic
+│ ├── main.py             # FastAPI app entry point
+│ ├── models.py           # Pydantic models and schemas
+│ └── requirements.txt 
+│
 ├── frontend/
-│   ├── app/                  # Next.js pages and routing
-│   ├── components/           # UI components using ShadCN
-│   ├── public/
-│   └── tailwind.config.ts
-└── README.md
+│ ├── app/                # Next.js pages and routing
+│ ├── components/         # UI components using ShadCN
+│ ├── public/ 
+│ ├── lib/                # Utility functions (API client, helpers)
+│ └── tailwind.config.ts 
+│
+└── README.md 
 ```
 
 ---
