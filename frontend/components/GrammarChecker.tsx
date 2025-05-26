@@ -39,7 +39,7 @@ export default function GrammarChecker({ darkMode, onResult }: GrammarCheckerPro
         <div className="space-y-4">
           <div>
             <label className={`block text-sm font-medium ${darkMode ? "text-gray-300" : "text-gray-700"} mb-2`}>
-              Enter text to check: (Don't use full stop after sentence completion)
+              Enter text to check: (Do not use full stop after sentence completion)
             </label>
             <textarea
               value={inputText}
