@@ -24,7 +24,6 @@ export default function GrammarChecker({ darkMode, onResult }: GrammarCheckerPro
       onResult(result)
     } catch (error) {
       console.error("Error checking grammar:", error)
-      // You might want to show an error message to the user
     } finally {
       setIsChecking(false)
     }
@@ -40,7 +39,7 @@ export default function GrammarChecker({ darkMode, onResult }: GrammarCheckerPro
         <div className="space-y-4">
           <div>
             <label className={`block text-sm font-medium ${darkMode ? "text-gray-300" : "text-gray-700"} mb-2`}>
-              Enter text to check:
+              Enter text to check: (Don't use full stop after sentence completion)
             </label>
             <textarea
               value={inputText}
