@@ -42,8 +42,8 @@ GrammaScan integrates **Gemini**, Google’s advanced multimodal AI model, to se
 
 ## 🌐 Live Demo
 
-- **Frontend**: [https://grammascan.vercel.app](https://grammascan.vercel.app)  
-- **Backend (API)**: [https://grammascan-api.onrender.com](https://grammascan-api.onrender.com)
+- **Frontend**: [https://gramma-scan.vercel.app/dashboard](https://gramma-scan.vercel.app/dashboard)  
+- **Backend (API)**: [https://gramma-backend.onrender.com/](https://gramma-backend.onrender.com/)
 
 ---
 
@@ -71,6 +71,7 @@ uvicorn main:app --reload
 
 ## Project Structure
 
+```bash
 grammascan/
 ├── backend/
 │   ├── main.py               # FastAPI app
@@ -82,6 +83,7 @@ grammascan/
 │   ├── public/
 │   └── tailwind.config.ts
 └── README.md
+```
 
 ---
 
