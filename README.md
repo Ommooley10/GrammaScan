@@ -6,17 +6,17 @@ GrammaScan is a fast, intelligent, and user-friendly grammar-checking web applic
 
 ## ✨ Key Features
 
-- ✅ Accurate grammar and spelling corrections using NLP
-- 🧠 **AI Assistant** powered by **Gemini** for contextual help and guidance
-- ⚡ High-performance API built with FastAPI
-- 💻 Clean, accessible UI using ShadCN UI and Tailwind CSS
-- 🌍 Responsive design for mobile and desktop
-- 🔌 API-first design for easy integration into other apps
-- ☁️ Fully deployed and accessible online
+-  Accurate grammar and spelling corrections using NLP
+-  **AI Assistant** powered by **Gemini** for contextual help and guidance
+-  High-performance API built with FastAPI
+-  Clean, accessible UI using ShadCN UI and Tailwind CSS
+-  Responsive design for mobile and desktop
+-  API-first design for easy integration into other apps
+- ☁ Fully deployed and accessible online
 
 ---
 
-## 🧠 NLP & AI Technology
+##  NLP & AI Technology
 
 ### spaCy
 [spaCy](https://spacy.io/) is an open-source library for advanced Natural Language Processing in Python. It provides fast and efficient tokenization, part-of-speech tagging, and entity recognition, making it ideal for text pre-processing and analysis.
@@ -29,7 +29,7 @@ GrammaScan integrates **Gemini**, Google’s advanced multimodal AI model, to se
 
 ---
 
-## 🛠 Technology Stack
+## Technology Stack
 
 | Layer       | Stack                                      |
 |-------------|--------------------------------------------|
@@ -47,7 +47,7 @@ GrammaScan integrates **Gemini**, Google’s advanced multimodal AI model, to se
 
 ---
 
-## 🚀 Local Setup Instructions
+##  Local Setup Instructions
 
 ### 🔹 Backend (FastAPI + spaCy + LanguageTool)
 
@@ -93,3 +93,5 @@ grammascan/
 
 Maintained by Ommooley10
 For issues, suggestions, or contributions, please open an issue or pull request.
+
+---
